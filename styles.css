@@ -50,8 +50,6 @@ body {
 .nav {
   display: flex;
   align-items: center;
-
-  /* position: relative; */
 }
 
 /* Nav Left */
