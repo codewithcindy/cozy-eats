@@ -17,13 +17,20 @@ body {
 /* Header */
 
 .header {
-  margin: 10px;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
 }
 
 .btn {
   padding: 10px;
   border-radius: 12px;
   font-family: "Raleway", sans-serif;
+}
+
+.btn:hover {
+  cursor: pointer;
 }
 
 .btn--start {
@@ -35,7 +42,6 @@ body {
 
 .btn--start:hover {
   background: #138639;
-  cursor: pointer;
 }
 
 .btn--login {
@@ -45,11 +51,21 @@ body {
   border: 1px solid var(--btn-primary-color);
 }
 
+.btn--login:hover {
+  background: var(--btn-primary-color);
+  color: var(--text-primary-color);
+}
+
 /* Nav */
 
 .nav {
   display: flex;
   align-items: center;
+
+  width: 100%;
+  height: 70px;
+  padding: 10px;
+  background-color: var(--text-primary-color);
 }
 
 /* Nav Left */
@@ -69,7 +85,7 @@ body {
 }
 
 /* Nav Open/clicked */
-.nav--open {
+.nav--menu {
   position: absolute;
   top: 60px; /* height of header */
   left: 0;
@@ -100,12 +116,20 @@ body {
   color: #2b2b2b;
 }
 
-.nav--open .btn--login {
+.nav--link a:hover {
+  color: #808080;
+}
+
+.nav--menu .btn--login {
   margin-top: auto;
 }
 
+.hidden {
+  display: none;
+}
+
 .overlay {
-  position: absolute;
+  position: fixed;
   top: 60px;
   left: 0;
   width: 100%;
@@ -113,6 +137,21 @@ body {
   background-color: rgba(0, 0, 0, 0.3);
   /* backdrop-filter: blur(px); */
   z-index: 5;
+}
+
+.nav.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 1;
+
+  animation: opacity 0.2s forwards;
+}
+
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
 }
 
 /* Hero */
@@ -124,6 +163,7 @@ body {
   height: 60vh;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -135,13 +175,13 @@ body {
   text-align: center;
 }
 
+.hero .btn--start {
+  margin-top: 1rem;
+}
+
 /* How It Works */
 
 .how-it-works {
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
-
   padding: 5% 3%;
 }
 
