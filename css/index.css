@@ -1,0 +1,77 @@
+/* Hero */
+
+.hero {
+  background-image: url("../img/pexels-ella-olsson-1640770.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 60vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-text {
+  color: var(--text-primary-color);
+  text-shadow: 2px 2px 7px rgb(73, 66, 66);
+  width: 70%;
+  text-align: center;
+}
+
+.hero .btn--start {
+  margin-top: 1rem;
+}
+
+/* How It Works */
+
+.how-it-works {
+  padding: 5% 3%;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px;
+}
+
+.step-icon {
+  width: 100px;
+  height: 100px;
+}
+
+.step-heading {
+  font-weight: 600;
+}
+
+.step-description {
+  color: var(--text-secondary-color);
+  text-align: center;
+}
+
+/* Gallery */
+.gallery {
+  text-align: center;
+  background-color: #f2f2f2;
+  padding: 1rem 0;
+}
+
+.gallery p {
+  display: inline-block;
+  background-color: rgba(0, 153, 51, 0.3);
+  padding: 0.2rem;
+}
+
+.gallery--images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery--images img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin: 1rem;
+}

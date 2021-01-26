@@ -13,7 +13,9 @@
     />
 
     <!-- Custom Styling -->
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="/css/global.css" />
+    <!-- <link rel="stylesheet" href="/css/index.css" /> -->
+    <link rel="stylesheet" href="/css/howitworks.css" />
 
     <!-- Custom Font -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -21,6 +23,9 @@
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Custom Script -->
+    <script defer src="./script.js"></script>
 
     <title>Cozy Eats</title>
   </head>
@@ -32,41 +37,77 @@
         </div>
         <div class="nav--right">
           <button class="btn btn--start">Get Started</button>
-          <i class="fas fa-bars"></i>
+          <i class="fas fa-bars nav--ham"></i>
         </div>
+        <div class="nav--menu hidden">
+          <div class="nav--links">
+            <div class="nav--link">
+              <img src="./img/iconmonstr-home-thin.svg" alt="" /><a
+                href="index.html"
+                >Home</a
+              >
+            </div>
+            <hr />
+            <div class="nav--link">
+              <img src="./img/iconmonstr-product-4.svg" alt="" /><a
+                href="./howitworks.html"
+                class="nav--link"
+                >How It Works</a
+              >
+            </div>
+            <hr />
+            <div class="nav--link">
+              <img src="./img/iconmonstr-eat-6-thin.svg" alt="" /><a
+                href="./onthemenu.html"
+                class="nav--link"
+                >On the Menu</a
+              >
+            </div>
+          </div>
+          <button class="btn btn--login">Log In</button>
+        </div>
+        <div class="overlay hidden"></div>
       </nav>
     </header>
 
     <div class="hero">
-      <h2 class="hero-text">
-        "These meal kits have made me realize how fun and easy cooking can be."
-        - Susan J.
-      </h2>
+      <h2 class="hero-text">How It Works</h2>
     </div>
 
     <div class="how-it-works">
       <div class="step">
-        <img src="./img/cutlery.svg" alt="" class="step-icon" />
-        <h3 class="step-heading">Choose your meals</h3>
+        <div class="step--top">
+          <img src="./img/cutlery.svg" alt="" class="step-icon" />
+          <h3 class="step-heading">Choose your meals</h3>
+        </div>
         <p class="step-description">
-          We refresh the menu weekly with recipes ranging from vegetarian to
-          carb-conscious to meals that can be ready in less than 30 minutes.
+          Every week we refresh the menu with recipes using the freshest
+          ingredients. We offer different meals to fit your needs - Vegetarian,
+          Carb-Conscious, and Meals Ready in Less than 30.
         </p>
       </div>
+
       <div class="step">
-        <img src="./img/box.svg" alt="" class="step-icon" />
-        <h3 class="step-heading">Unpack the goods</h3>
+        <div class="step--top">
+          <img src="./img/box.svg" alt="" class="step-icon" />
+          <h3 class="step-heading">Unpack the goods</h3>
+        </div>
         <p class="step-description">
-          Your meals are guaranteed to arrive fresh in an insulated box right at
-          your doorstep.
+          Wait for your meal kits to arrive at your front door in an insulated
+          box. We guarantee the freshest ingredients so you feel your best
+          eating our meals.
         </p>
       </div>
+
       <div class="step">
-        <img src="./img/soup.svg" alt="" class="step-icon" />
-        <h3 class="step-heading">Cook and enjoy!</h3>
+        <div class="step--top">
+          <img src="./img/soup.svg" alt="" class="step-icon" />
+          <h3 class="step-heading">Cook and enjoy!</h3>
+        </div>
         <p class="step-description">
-          Follow our easy step-by-step recipe cards, use our fresh, pre-measured
-          ingredients, and have fun!
+          Follow the step-by-step recipe cards packed with each kit. Each recipe
+          card comes with easy-to-follow directions and pictures to make the
+          process as stress-free as possible.
         </p>
       </div>
     </div>

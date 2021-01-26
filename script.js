@@ -21,7 +21,37 @@ const openNav = function () {
 };
 
 // const openNav = function () {
-//   nav.insertAdjacentHTML("beforeend", '<div class="nav--menu"></div>');
+//   const navMenuHTML = `<div class="nav--menu">
+//     <div class="nav--links">
+//         <div class="nav--link">
+//         <img src="./img/iconmonstr-home-thin.svg" alt="" /><a href="#"
+//             >Home</a
+//         >
+//         </div>
+//         <hr />
+//         <div class="nav--link">
+//         <img src="./img/iconmonstr-product-4.svg" alt="" /><a
+//             href="./howitworks.html"
+//             class="nav--link"
+//             >How It Works</a
+//         >
+//         </div>
+//         <hr />
+
+//         <div class="nav--link">
+//         <img src="./img/iconmonstr-eat-6-thin.svg" alt="" /><a
+//             href="./onthemenu.html"
+//             class="nav--link"
+//             >On the Menu</a
+//         >
+//         </div>
+
+//         <button class="btn btn--login">Log In</button>
+//     </div>
+// </div>
+// <div class="overlay"></div>`;
+
+//   nav.insertAdjacentHTML("beforeend", navMenuHTML);
 // };
 
 ///////////////////////////////////
@@ -32,9 +62,7 @@ const openNav = function () {
 navHam.addEventListener("click", openNav);
 
 // Sticky Header
-
 const stickyNav = function (entries) {
-  console.log(entries);
   const [entry] = entries;
 
   if (!entry.isIntersecting) nav.classList.add("sticky");
