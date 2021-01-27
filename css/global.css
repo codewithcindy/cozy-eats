@@ -14,10 +14,13 @@ body {
   font-family: "Raleway", sans-serif;
 }
 
+button {
+  font-family: "Raleway", sans-serif;
+}
+
 .btn {
   padding: 10px;
   border-radius: 12px;
-  font-family: "Raleway", sans-serif;
 }
 
 .btn:hover {

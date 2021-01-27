@@ -66,29 +66,3 @@
   color: var(--text-secondary-color);
   text-align: center;
 }
-
-/* Gallery */
-.gallery {
-  text-align: center;
-  background-color: #f2f2f2;
-  padding: 1rem 0;
-}
-
-.gallery p {
-  display: inline-block;
-  background-color: rgba(0, 153, 51, 0.3);
-  padding: 0.2rem;
-}
-
-.gallery--images {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.gallery--images img {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  margin: 1rem;
-}
