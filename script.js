@@ -199,4 +199,10 @@ headerObserver.observe(header);
 window.addEventListener("DOMContentLoaded", function () {
   // Load all items
   displayMenuItems(menuItems);
+
+  // Load all buttons
+  const categories = menuItems.map(function (item) {
+    console.log(item);
+  });
+  console.log(categories);
 });

@@ -27,6 +27,8 @@
 
 .how-it-works {
   padding: 5% 3%;
+  margin: 0 auto;
+  max-width: 900px;
 }
 
 .step {
@@ -39,6 +41,10 @@
 .step-icon {
   width: 100px;
   height: 100px;
+}
+
+.step--text {
+  text-align: center;
 }
 
 .step-heading {
@@ -74,4 +80,30 @@
   height: 200px;
   object-fit: cover;
   margin: 1rem;
+}
+
+@media screen and (min-width: 700px) {
+  .step {
+    flex-direction: row;
+    margin: 40px;
+  }
+
+  .step-icon {
+    width: 150px;
+    height: 150px;
+
+    flex-basis: 0;
+    flex-grow: 1;
+  }
+
+  .step--text {
+    font-size: 110%;
+
+    flex-basis: 0;
+    flex-grow: 1;
+  }
+
+  .step:nth-child(2) .step-icon {
+    order: 2;
+  }
 }
