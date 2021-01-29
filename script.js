@@ -10,7 +10,7 @@ const navMenu = document.querySelector(".nav--menu");
 const overlay = document.querySelector(".overlay");
 const nav = document.querySelector(".nav");
 
-const filterBtns = document.querySelectorAll(".btn--filter");
+const filterBtnsContainer = document.querySelector(".btn--filter--container");
 const menuContainer = document.querySelector(".menu--items");
 
 ///////////////////////////////////
@@ -49,21 +49,21 @@ const menuItems = [
     id: 5,
     title: "Soba Stir Fry",
     desc: "with carrots and mushrooms",
-    category: "carb-conscious",
+    category: "low-carb",
     img: "./img/menu/carb-1.jpg",
   },
   {
     id: 6,
     title: "Cauliflower Veggie Bowl",
     desc: "with cauliflower rice, green beans, and cherry tomatos",
-    category: "carb-conscious",
+    category: "low-carb",
     img: "./img/menu/carb-2.jpg",
   },
   {
     id: 7,
     title: "Heart Veggie Soup",
     desc: "with tomatoes and spinach",
-    category: "carb-conscious",
+    category: "low-carb",
     img: "./img/menu/carb-3.jpg",
   },
   {
@@ -127,58 +127,50 @@ const displayMenuItems = function (menuItems) {
   menuContainer.innerHTML = displayMenu;
 };
 
-/* Filter menu items */
-filterBtns.forEach(function (btn) {
-  btn.addEventListener("click", function (e) {
-    const btnCategory = e.currentTarget.dataset.id;
+/* Display all menu category btns */
+const displayMenuBtns = function () {
+  // Compile all unique categories
+  const categories = menuItems.reduce(
+    function (acc, curItem) {
+      if (!acc.includes(curItem.category)) acc.push(curItem.category);
+      return acc;
+    },
+    ["all"]
+  );
 
-    const itemCategory = menuItems.filter(function (item) {
-      if (item.category === btnCategory) {
-        return item;
+  // Create btn for each unique category
+  const categoryBtns = categories
+    .map(function (category) {
+      return ` <button class="btn--filter" data-id="${category}">
+      ${category}
+    </button>`;
+    })
+    .join("");
+
+  // Add btns to btn container
+  filterBtnsContainer.innerHTML = categoryBtns;
+
+  // Filter menu items
+  const filterBtns = filterBtnsContainer.querySelectorAll(".btn--filter");
+
+  filterBtns.forEach(function (btn) {
+    btn.addEventListener("click", function (e) {
+      const btnCategory = e.currentTarget.dataset.id;
+
+      const itemCategory = menuItems.filter(function (item) {
+        if (item.category === btnCategory) {
+          return item;
+        }
+      });
+
+      if (btnCategory === "all") {
+        displayMenuItems(menuItems); // display all items if btn is all
+      } else {
+        displayMenuItems(itemCategory); // pass in new filtered array with selected category
       }
     });
-
-    if (btnCategory === "all") {
-      displayMenuItems(menuItems); // display all items if btn is all
-    } else {
-      displayMenuItems(itemCategory); // pass in new filtered array with selected category
-    }
   });
-});
-
-// const openNav = function () {
-//   const navMenuHTML = `<div class="nav--menu">
-//     <div class="nav--links">
-//         <div class="nav--link">
-//         <img src="./img/iconmonstr-home-thin.svg" alt="" /><a href="#"
-//             >Home</a
-//         >
-//         </div>
-//         <hr />
-//         <div class="nav--link">
-//         <img src="./img/iconmonstr-product-4.svg" alt="" /><a
-//             href="./howitworks.html"
-//             class="nav--link"
-//             >How It Works</a
-//         >
-//         </div>
-//         <hr />
-
-//         <div class="nav--link">
-//         <img src="./img/iconmonstr-eat-6-thin.svg" alt="" /><a
-//             href="./onthemenu.html"
-//             class="nav--link"
-//             >On the Menu</a
-//         >
-//         </div>
-
-//         <button class="btn btn--login">Log In</button>
-//     </div>
-// </div>
-// <div class="overlay"></div>`;
-
-//   nav.insertAdjacentHTML("beforeend", navMenuHTML);
-// };
+};
 
 ///////////////////////////////////
 ///////// Event Handlers //////////
@@ -201,8 +193,5 @@ window.addEventListener("DOMContentLoaded", function () {
   displayMenuItems(menuItems);
 
   // Load all buttons
-  const categories = menuItems.map(function (item) {
-    console.log(item);
-  });
-  console.log(categories);
+  displayMenuBtns();
 });
